@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Sage — AI Agent
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css?v=2"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     BACKGROUND GLOW
+========================================= -->
+
+<div class="ambient ambient-one"></div>
+
+<div class="ambient ambient-two"></div>
+
+<div class="ambient ambient-three"></div>
+
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+
+    <!-- LOGO -->
+
+    <div class="brand">
+
+        <span class="brand-sage">
+            sage
+        </span>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#tools">
+            Tools
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </nav>
+
+
+
+    <!-- CONNECTION STATUS -->
+
+    <div class="nav-status">
+
+        <span
+            id="statusDot"
+            class="status-dot"
+        ></span>
+
+        <span id="statusText">
+            Offline
+        </span>
+
+    </div>
+
+    <button
+        id="navChatButton"
+        class="nav-chat-button"
+        type="button"
+    >
+        Chat with Sage
+    </button>
+
+
+</header>
+
+
+
+<!-- =========================================
+     LANDING PAGE
+========================================= -->
+
+<section
+    id="landing"
+    class="landing"
+>
+
+
+    <!-- TRUST PILL -->
+
+    <div class="trust-pill">
+
+        <span>
+            ✦
+        </span>
+
+        MCP-powered AI agent
+
+    </div>
+
+
+
+    <!-- HERO TITLE -->
+
+    <h1>
+
+        One Agent.
+
+        <br>
+
+        <span class="gradient-text">
+
+            Endless Possibilities.
+
+        </span>
+
+    </h1>
+
+
+
+    <!-- DESCRIPTION -->
+
+    <p class="hero-copy">
+
+        One AI assistant for Google Sheets, Docs, Slides, and Zoho CRM.
+        Ask naturally, get useful answers, and let Sage handle the routine work.
+
+    </p>
+
+
+
+    <!-- BUTTONS -->
+
+    <div class="hero-actions">
+
+
+        <button
+            id="startButton"
+            class="primary-button"
+        >
+
+            Chat with Sage
+
+        </button>
+
+
+
+        <button
+            id="demoButton"
+            class="secondary-button"
+        >
+
+            View MCP Tools
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- TERMINAL PREVIEW -->
+
+    <div class="hero-console">
+
+
+        <!-- TERMINAL HEADER -->
+
+        <div class="console-header">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+
+            <div class="console-title">
+
+                sage / workspace-tools
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TERMINAL CONTENT -->
+
+        <div class="console-body">
+
+
+            <div>
+
+                <span class="console-green">
+                    ✓
+                </span>
+
+                MCP Server ready
+
+            </div>
+
+
+
+            <div>
+
+                <span class="console-green">
+                    ✓
+                </span>
+
+                Google Workspace + CRM tools ready
+
+            </div>
+
+
+
+            <div>
+
+                <span class="console-cyan">
+                    →
+                </span>
+
+                Tool discovery available
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     CHAT APPLICATION
+========================================= -->
+
+<section
+    id="chatSection"
+    class="chat-section hidden"
+>
+
+
+    <!-- =====================================
+         LEFT SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- SAGE BRAND -->
+
+        <div class="sidebar-brand">
+
+            <span class="mini-spark">
+                ✦
+            </span>
+
+            Sage
+
+        </div>
+
+
+
+        <!-- NEW CHAT -->
+
+        <button
+            id="newChatButton"
+            class="new-chat"
+        >
+
+            <span>
+                ＋
+            </span>
+
+            New conversation
+
+        </button>
+
+
+
+        <!-- =================================
+             CONNECTED SERVICES
+        ================================== -->
+
+        <div class="sidebar-section">
+
+
+            <div class="section-label">
+
+                WORKSPACE INTEGRATIONS
+
+            </div>
+
+
+
+            <div id="integrationList" class="integration-list">
+                <div class="server-card">
+                    <div class="server-icon">✦</div>
+                    <div>
+                        <strong>Workspace tools</strong>
+                        <small>Waiting for connection</small>
+                    </div>
+                    <span class="server-dot"></span>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             TOOLS
+        ================================== -->
+
+        <div
+            id="tools"
+            class="sidebar-section"
+        >
+
+
+            <div class="section-label">
+
+                AVAILABLE TOOLS
+
+            </div>
+
+
+
+            <div
+                id="toolList"
+                class="tool-list"
+            >
+
+                <div class="tool-empty">
+
+                    Waiting for MCP...
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             SIDEBAR FOOTER
+        ================================== -->
+
+        <div class="sidebar-footer">
+
+
+            <div class="security-line">
+
+                <span>
+                    ●
+                </span>
+
+                Local development
+
+            </div>
+
+
+
+            <div class="endpoint">
+
+                MCP /mcp/
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN CHAT
+    ====================================== -->
+
+    <main class="chat-main">
+
+
+        <!-- =================================
+             CHAT HEADER
+        ================================== -->
+
+        <div class="chat-topbar">
+
+
+            <div>
+
+
+                <div class="chat-title">
+
+                    Sage AI Agent
+
+                </div>
+
+
+
+                <div class="chat-subtitle">
+
+                    Google Workspace • Zoho CRM
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                id="backButton"
+                class="back-button"
+            >
+
+                Back
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             MESSAGES
+        ================================== -->
+
+        <div
+            id="messages"
+            class="messages"
+        ></div>
+
+
+
+        <!-- =================================
+             LIVE ACTIVITY
+        ================================== -->
+
+        <div
+            id="activity"
+            class="activity hidden"
+        >
+
+
+            <div class="activity-line"></div>
+
+
+            <div id="activityText">
+
+                Processing...
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             MESSAGE COMPOSER
+        ================================== -->
+
+        <div class="composer">
+
+
+            <textarea
+                id="messageInput"
+                placeholder="Ask Sage anything, or ask it to use your connected tools..."
+                rows="1"
+            ></textarea>
+
+
+
+            <button
+                id="sendButton"
+                class="send-button"
+                title="Send"
+            >
+
+                ↑
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- HINT -->
+
+        <div class="composer-hint">
+
+            Try: “hello”, “create a Google Sheet”, “update my sheet”, or “show leads”
+
+        </div>
+
+
+    </main>
+
+
+</section>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="/static/app.js?v=2"></script>
+
+
+</body>
+
+</html>
